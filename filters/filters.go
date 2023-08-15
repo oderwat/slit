@@ -57,7 +57,7 @@ const (
 	FilterIntersectChar rune = '&'
 	FilterUnionChar     rune = '+'
 	FilterExcludeChar   rune = '-'
-	FilterHighlightChar rune = '~'
+	FilterHighlightChar rune = '^'
 )
 
 var FilterActionMap = map[rune]FilterAction{

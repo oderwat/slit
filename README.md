@@ -1,6 +1,8 @@
 ## **Slit** - a modern $PAGER for noisy logs
 
 
+> ***NOTICE: This is a fork of the original code by Anton Bykov which I created to change some stuff for my personal use (especially making it working with a German keyboard)***
+
 The goal is to get **more** from logs than **most** other pagers can - and to do so in **less** time.
 
 
@@ -28,7 +30,7 @@ Keep in mind, however, that they might be some commits behind master branch.
 - `?` - Backsearch  
 - `n` - Next match
 - `N` - Previous match
-- `CTRL + /` - Switch between `CaseSensitive` search and `RegEx`
+- `CTRL + r` (or `CTRL + /`) - Switch between `CaseSensitive` search and `RegEx`
 - `&` - Filter: intersect
 - `-` - Filter: exclude
 - `+` - Filter: union
@@ -46,7 +48,7 @@ Keep in mind, however, that they might be some commits behind master branch.
 - `Arrow down`, `j` - Move one line down
 - `Arrow up`, `k` - Move one line up
 - `Arrow left`, `Arrow right` - Scroll horizontally
-- `<`, `>` - Precise horizontal scrolling, 1 character a time
+- `<` or `ö`, `>` or `ä` - Precise horizontal scrolling, 1 character a time
    
 ##### Misc
 - `K` - Keep N first characters(usually containing timestamp) when navigating horizontally  
@@ -76,8 +78,8 @@ When navigating up from the end, following will be stopped and resumed upon navi
 - `--version` - Displays version
 
 ### Highlighting
-- ``` ` ``` - (Backtick) Mark top line for highlighting (i.e. will be shown no matter what other filters are active)
-- ``` ~ ``` - Highlight filter, i.e. search and highlight everything that matches
+- ``` ° ``` (`shift ^`) - Mark top line for highlighting (i.e. will be shown no matter what other filters are active)
+- ``` ^ ``` - Highlight filter, i.e. search and highlight everything that matches
 - `h` - Move to next highlighted line
 - `H` - Move to previous highlighted line
 - `ctrl+h` - Remove all highlights

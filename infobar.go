@@ -126,7 +126,7 @@ func (v *infobar) draw() {
 		termbox.SetCell(0, v.y, '-', termbox.ColorGreen, termbox.ColorDefault)
 		v.showSearch()
 	case ibModeHighlight:
-		termbox.SetCell(0, v.y, '~', termbox.ColorGreen, termbox.ColorDefault)
+		termbox.SetCell(0, v.y, '^', termbox.ColorGreen, termbox.ColorDefault)
 		v.showSearch()
 	case ibModeSave:
 		termbox.SetCell(0, v.y, '>', termbox.ColorMagenta, termbox.ColorDefault)
