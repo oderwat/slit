@@ -1,11 +1,11 @@
 package main
 
 import (
+	"context"
+	_ "embed"
 	"fmt"
 	"io"
 	"os"
-
-	"context"
 	"time"
 
 	flag "github.com/ogier/pflag"
@@ -14,7 +14,8 @@ import (
 	"github.com/tigrawap/slit/logging"
 )
 
-const VERSION = "1.3.0"
+//go:embed .version
+var VERSION string
 
 var (
 	outPath    string

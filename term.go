@@ -257,6 +257,7 @@ func (v *viewer) draw() {
 			}
 		}
 		for i, char := range chars {
+			repeat := 1
 			attr = attrs[i]
 			highlightStyle = termbox.Attribute(0)
 			if len(hlIndices) != 0 && hlChars == 0 {
@@ -274,20 +275,41 @@ func (v *viewer) draw() {
 				attr.Bg = attr.Bg | ansi.BgColor(ansi.ColorYellow)
 			}
 
+			if char == 9 { // TAB
+				char = '·' // 0x0387
+				attr.Fg = attr.Fg | ansi.FgColor(ansi.ColorGray)
+				repeat = 4
+			}
+
+			if char == 92 { // PARAGRAPH SEPARATOR (which is what we get for a tab in the input data
+				char = '»'
+				attr.Fg = attr.Fg | ansi.FgColor(ansi.ColorGray)
+				repeat = 4
+			}
+
 			fg, bg := ToTermboxAttr(attr)
 
 			if highlightStyle != termbox.Attribute(0) {
 				fg = fg | highlightStyle
 			}
-			termbox.SetCell(tx, ty, char, fg, bg)
-			tx += runewidth.RuneWidth(char)
-			if tx >= v.width {
-				if v.wrap {
-					tx = 0
-					ty++
-				} else {
-					break
+
+			breakIt := false
+			for repeat > 0 {
+				repeat--
+				termbox.SetCell(tx, ty, char, fg, bg)
+				tx += runewidth.RuneWidth(char)
+				if tx >= v.width {
+					if v.wrap {
+						tx = 0
+						ty++
+					} else {
+						breakIt = true
+						break
+					}
 				}
+			}
+			if breakIt {
+				break
 			}
 		}
 		if ty >= v.height {
@@ -295,7 +317,6 @@ func (v *viewer) draw() {
 		}
 		dataLine++
 	}
-	v.info.draw()
 	termbox.Flush()
 }
 
