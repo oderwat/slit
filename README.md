@@ -26,8 +26,8 @@ Keep in mind, however, that they might be some commits behind master branch.
 ### Key bindings:  
 
 ##### Search/Filters
-- `/` - Forward search  
-- `?` - Backsearch  
+- `/` or `s` - Forward search  
+- `?` or `S` - Backsearch  
 - `n` - Next match
 - `N` - Previous match
 - `CTRL + r` (or `CTRL + /`) - Switch between `CaseSensitive` search and `RegEx`
@@ -53,13 +53,13 @@ Keep in mind, however, that they might be some commits behind master branch.
 ##### Misc
 - `K` - Keep N first characters(usually containing timestamp) when navigating horizontally  
     Up/Down arrows during K-mode will adjust N of kept chars 
-- `W` - Wrap/Unwrap lines
+- `w` - Wrap/Unwrap lines
 - `CTRL + S` - Save filtered version to file (will prompt for filepath)
 - `q` - quit
 
 ### Search modes
 Both search and filters currently support the `CaseSensitive` and `RegEx` modes.
-To switch between modes press `CTRL + /` in search/filter input.
+To switch between modes press `CTRL + r` in search/filter input.
 
 ***TODO**: History does not preserve mode of previous searches. Will be improved soon*
 
@@ -78,12 +78,12 @@ When navigating up from the end, following will be stopped and resumed upon navi
 - `--version` - Displays version
 
 ### Highlighting
-- ``` ° ``` (`shift ^`) - Mark top line for highlighting (i.e. will be shown no matter what other filters are active)
+- `m` or ``` ° ``` (`shift ^`) - Mark top line for highlighting (i.e. will be shown no matter what other filters are active)
 - ``` ^ ``` - Highlight filter, i.e. search and highlight everything that matches
 - `h` - Move to next highlighted line
 - `H` - Move to previous highlighted line
-- `ctrl+h` - Remove all highlights
-- `=` - Removes filters only. Does not remove highlights via `~`
+- `CTRL + h` - Remove all highlights
+- `=` - Removes filters only. Does not remove highlights via `^`
 
 ### Filters
 

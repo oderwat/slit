@@ -270,8 +270,8 @@ func (v *viewer) draw() {
 				hlChars--
 			}
 			if line.Highlighted {
-				highlightStyle = highlightStyle | termbox.AttrUnderline | termbox.AttrBold
-				//attr.Bg = attr.Bg | ansi.FgColor(ansi.ColorYellow)
+				//highlightStyle = highlightStyle | termbox.AttrUnderline | termbox.AttrBold
+				attr.Bg = attr.Bg | ansi.BgColor(ansi.ColorYellow)
 			}
 
 			fg, bg := ToTermboxAttr(attr)
@@ -353,7 +353,7 @@ func (v *viewer) processKey(ev termbox.Event) (a action) {
 	v.onUserAction()
 	if ev.Ch != 0 {
 		switch ev.Ch {
-		case 'W':
+		case 'w':
 			logging.Debug("switching wrapping")
 			v.wrap = !v.wrap
 			if v.wrap {
@@ -384,7 +384,7 @@ func (v *viewer) processKey(ev termbox.Event) (a action) {
 			v.navigatePageDown()
 		case 'b':
 			v.navigatePageUp()
-		case '/':
+		case '/', 's':
 			v.focus = &v.info
 			v.info.reset(ibModeSearch)
 		case filters.FilterIntersectChar:
@@ -399,11 +399,11 @@ func (v *viewer) processKey(ev termbox.Event) (a action) {
 		case filters.FilterHighlightChar:
 			v.focus = &v.info
 			v.info.reset(ibModeHighlight)
-		case '°':
+		case '°', 'm':
 			v.fetcher.toggleHighlight(v.buffer.currentLine().Pos.Line)
 			v.buffer.toggleCurrentHighlight()
 			v.draw()
-		case '?':
+		case '?', 'S':
 			v.focus = &v.info
 			v.info.reset(ibModeBackSearch)
 		case 'M':
