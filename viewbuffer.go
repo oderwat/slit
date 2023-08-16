@@ -2,8 +2,8 @@ package slit
 
 import (
 	"context"
-	"github.com/tigrawap/slit/filters"
-	"github.com/tigrawap/slit/logging"
+	"github.com/oderwat/slit/filters"
+	"github.com/oderwat/slit/logging"
 	"io"
 	"sync"
 )

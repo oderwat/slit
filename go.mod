@@ -1,4 +1,4 @@
-module github.com/tigrawap/slit
+module github.com/oderwat/slit
 
 go 1.16
 

@@ -16,9 +16,9 @@ import (
 	"syscall"
 
 	"github.com/nsf/termbox-go"
-	"github.com/tigrawap/slit/filters"
-	"github.com/tigrawap/slit/logging"
-	"github.com/tigrawap/slit/utils"
+	"github.com/oderwat/slit/filters"
+	"github.com/oderwat/slit/logging"
+	"github.com/oderwat/slit/utils"
 )
 
 func init() {

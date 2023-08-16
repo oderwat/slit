@@ -2,7 +2,7 @@ package ansi
 
 import (
 	"bytes"
-	"github.com/tigrawap/slit/runes"
+	"github.com/oderwat/slit/runes"
 	"strconv"
 	"strings"
 )

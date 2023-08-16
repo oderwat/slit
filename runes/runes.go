@@ -1,7 +1,7 @@
 package runes
 
 import (
-	"github.com/tigrawap/slit/logging"
+	"github.com/oderwat/slit/logging"
 )
 
 func InsertRune(runes []rune, r rune, pos int) []rune {

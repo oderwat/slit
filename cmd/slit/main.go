@@ -9,9 +9,9 @@ import (
 	"time"
 
 	flag "github.com/ogier/pflag"
-	"github.com/tigrawap/slit"
-	"github.com/tigrawap/slit/filters"
-	"github.com/tigrawap/slit/logging"
+	"github.com/oderwat/slit"
+	"github.com/oderwat/slit/filters"
+	"github.com/oderwat/slit/logging"
 )
 
 //go:embed .version

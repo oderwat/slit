@@ -2,7 +2,7 @@ package slit
 
 import (
 	"github.com/nsf/termbox-go"
-	"github.com/tigrawap/slit/logging"
+	"github.com/oderwat/slit/logging"
 	"time"
 )
 
